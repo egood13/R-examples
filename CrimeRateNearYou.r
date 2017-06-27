@@ -1,3 +1,6 @@
+
+## this program uses crime rate data to calculate the crime rate by zip code in Louisville, KY
+
 ##########CrimerateNearYou.r##########
 
 
