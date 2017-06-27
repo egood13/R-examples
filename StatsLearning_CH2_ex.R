@@ -1,4 +1,6 @@
 
+#hw problems in Elements of Statistical Learning
+
 #check the directory is set to Kaggle
 
 ###PROB 8###
