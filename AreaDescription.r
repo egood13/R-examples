@@ -1,3 +1,7 @@
+
+## This program uses crime rate data to calculate the crime rate by zip code in Louisville, KY
+
+
 dataCache <- function(url = NULL){
     #to use this function you'll need to set dataCache to a variable
     #and call the subfunctions from the list that is returned
