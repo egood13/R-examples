@@ -1,4 +1,6 @@
 
+# hw problems in Elements of Statistical Learning
+
 #### Chapter 3 Problems ####
 setwd('./R/Kaggle/statslearning')
 
