@@ -39,13 +39,8 @@ check.ValInCol <- function(df,col,val){
     }
     
 subset.df <- function(df, col, val){
-    
-    # subset your dataframe to isolate desired values in columns
-    if(as.character(df) | as.character(col)){
-        
-        stop("Do not pass df or col arguments with quotations in subset.df")
-    }
-    return(subset(df, col == val))
+
+    return(subset(df, df[col] == val))
     
 }
 
@@ -53,8 +48,9 @@ crime.rate <- function(df, pop = 756832){
     
     # Louisville city population is 756832
     # use subset.df isolate rows with a specified value
-    rate <- format((nrow(df)/pop
-                    
+    rate <- (nrow(df)/pop)
+    return(rate)
+}
 
 
 col.summary <- function(df, col){
@@ -63,7 +59,6 @@ col.summary <- function(df, col){
     summary <- summary(df[, as.character(col)])
     summary <- (summary/nrow(df))*100
     return(sort(summary, decreasing = TRUE))
-    
 }
 
 #######SCRIPT/ANALYSIS##############
@@ -87,12 +82,10 @@ if(!check.exists("crime.data")){
 
     }
 
-crime.data <- selcol(crime.data, c("ZIP_CODE","CRIME_TYPE"))
+col.data <- selcol(crime.data, c("ZIP_CODE","CRIME_TYPE"))
 
-crime.data <- subset.df(crime.data, "ZIP_CODE", my.zip)
+col.data <- subset.df(crime.data, "ZIP_CODE", my.zip)
 
 crime.rate(crime.data)
 
 col.summary(crime.data, "CRIME_TYPE")
-
-
